@@ -137,6 +137,7 @@ class Http:
                                 else:
                                     return {'fsid': search_item, 'valid_id': False}
 
+                            body['_search_item'] = endpoint[1]
                             return body
 
             except asyncio.TimeoutError:

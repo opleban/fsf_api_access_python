@@ -1017,7 +1017,8 @@ def format_location_summary_property(data):
     df['historic'] = df['historic'].astype('Int64').apply(str)
     df['adaptation'] = df['adaptation'].astype('Int64').apply(str)
     df['floodFactor'] = df['floodFactor'].astype('Int64').apply(str)
-    return df[['fsid', 'valid_id', 'floodFactor', 'riskDirection', 'environmentalRisk', 'historic', 'adaptation']]
+    df['search_item'] = df['search_item'].apply(str)
+    return df[['fsid', 'search_item', 'valid_id', 'floodFactor', 'riskDirection', 'environmentalRisk', 'historic', 'adaptation']]
 
 
 def format_location_summary(data):
@@ -1045,7 +1046,8 @@ def format_location_summary(data):
     df['adaptation'] = df['adaptation'].astype('Int64').apply(str)
     df['propertiesTotal'] = df['propertiesTotal'].astype('Int64').apply(str)
     df['propertiesAtRisk'] = df['propertiesAtRisk'].astype('Int64').apply(str)
-    return df[['fsid', 'valid_id', 'riskDirection', 'environmentalRisk', 'propertiesTotal',
+    df['search_item'] = df['search_item'].apply(str)
+    return df[['fsid', 'search_item', 'valid_id', 'riskDirection', 'environmentalRisk', 'propertiesTotal',
                'propertiesAtRisk', 'historic']]
 
 
