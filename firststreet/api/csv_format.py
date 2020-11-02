@@ -1039,6 +1039,7 @@ def format_location_summary(data):
         df['propertiesTotal'] = pd.NA
         df['propertiesAtRisk'] = pd.NA
 
+    df['search_item'] = df['search_item'].apply(str)
     df['fsid'] = df['fsid'].apply(str)
     df['riskDirection'] = df['riskDirection'].astype('Int64').apply(str)
     df['environmentalRisk'] = df['environmentalRisk'].astype('Int64').apply(str)
@@ -1046,7 +1047,6 @@ def format_location_summary(data):
     df['adaptation'] = df['adaptation'].astype('Int64').apply(str)
     df['propertiesTotal'] = df['propertiesTotal'].astype('Int64').apply(str)
     df['propertiesAtRisk'] = df['propertiesAtRisk'].astype('Int64').apply(str)
-    df['search_item'] = df['search_item'].apply(str)
     return df[['search_item', 'fsid', 'valid_id', 'riskDirection', 'environmentalRisk', 'propertiesTotal',
                'propertiesAtRisk', 'historic']]
 
