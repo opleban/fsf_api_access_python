@@ -1047,7 +1047,7 @@ def format_location_summary(data):
     df['propertiesTotal'] = df['propertiesTotal'].astype('Int64').apply(str)
     df['propertiesAtRisk'] = df['propertiesAtRisk'].astype('Int64').apply(str)
     df['search_item'] = df['search_item'].apply(str)
-    return df[['fsid', 'search_item', 'valid_id', 'riskDirection', 'environmentalRisk', 'propertiesTotal',
+    return df[['search_item', 'fsid', 'valid_id', 'riskDirection', 'environmentalRisk', 'propertiesTotal',
                'propertiesAtRisk', 'historic']]
 
 

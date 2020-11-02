@@ -14,3 +14,4 @@ class Api:
             self.valid_id = response.get('valid_id')
         else:
             self.valid_id = True
+        self.search_item = response.get('_search_item')

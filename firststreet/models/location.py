@@ -191,7 +191,6 @@ class LocationSummary(Api):
         self.environmentalRisk = response.get('environmentalRisk')
         self.historic = response.get('historic')
         self.adaptation = response.get('adaptation')
-        self.search_item = response.get('_search_item')
 
 
 class LocationSummaryProperty(LocationSummary):
