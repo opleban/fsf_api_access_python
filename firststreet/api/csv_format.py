@@ -1011,14 +1011,14 @@ def format_location_summary_property(data):
         A pandas formatted DataFrame
     """
     df = pd.DataFrame([vars(o) for o in data])
+    df['search_item'] = df['search_item'].apply(str)
     df['fsid'] = df['fsid'].apply(str)
     df['riskDirection'] = df['riskDirection'].astype('Int64').apply(str)
     df['environmentalRisk'] = df['environmentalRisk'].astype('Int64').apply(str)
     df['historic'] = df['historic'].astype('Int64').apply(str)
     df['adaptation'] = df['adaptation'].astype('Int64').apply(str)
     df['floodFactor'] = df['floodFactor'].astype('Int64').apply(str)
-    df['search_item'] = df['search_item'].apply(str)
-    return df[['fsid', 'search_item', 'valid_id', 'floodFactor', 'riskDirection', 'environmentalRisk', 'historic', 'adaptation']]
+    return df[['search_item', 'fsid', 'valid_id', 'floodFactor', 'riskDirection', 'environmentalRisk', 'historic', 'adaptation']]
 
 
 def format_location_summary(data):
